@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(171, 84, 253);
+            font-family: sans-serif;
+        }
+        .container{
+           
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+           
+
+        }
+        form{
+            width: 500px;
+            height: 270px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            gap: 10px;
+            border-radius: 10px;
+            
+        }
+        form label{
+            font-size: large;
+            font-family: sans-serif;
+            
+        }
+        form input{
+            height: 40px;
+            padding-left: 20px;
+            border-radius: 5px;
+            border: 2px solid rgb(171, 84, 253);
+            outline: none;
+           
+     }
+     form button{
+        width: 200px;
+        height: 30px;
+        margin-left: 100px;
+        background-color:  rgb(171, 84, 253);
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 10px;
+     }
+     form p{
+        font-size: small;
+        font-family: sans-serif;
+        color: rgb(223, 85, 85);
+     }
+     @media screen  and (max-width:500px){
+        form{
+            width: 300px;
+            height: 230px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            gap: 11px;
+            border-radius: 10px;
+            
+        }
+        form label{
+            font-size: smaller;
+            font-family: sans-serif;
+            
+        }
+        form input{
+            height: 40px;
+            padding-left: 20px;
+            border-radius: 5px;
+            border: 2px solid rgb(171, 84, 253);
+            outline: none;
+           
+     }
+     form button{
+        width: 200px;
+        height: 30px;
+        margin-left: 30px;
+        background-color:  rgb(171, 84, 253);
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 3px;
+     }
+     form p{
+        font-size: 10px;
+        font-family: sans-serif;
+        margin-left: 10px;
+        color: rgb(179, 86, 86);
+     }
+     }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="post">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter the password">
+
+            <label for="ConformPassword">ConformPassword</label>
+            <input type="password" id="conformpassword" name="conform-Password" placeholder="conform-Password">
+
+            <p id="message">Error </p>
+
+            <button  onclick="formvalidation()"> SUBMIt </button>
+        </form>
+    
+
+   
+    <script>
+
+        function formvalidation(){
+            let password = document.getElementById("password").value;
+            let ConformPassword = document.getElementById("conformpassword").value;
+            console.log(password,ConformPassword)
+         let message = document.querySelector("#message");
+         console.log(message)
+            
+            if(password.length != 0){
+                if(password == ConformPassword){
+                message = "password Match" ;
+                message.style.backgroundColor = "blue";
+                
+                
+                }
+
+                else{
+                    message= "Password is not Match"
+                    message.style.backgroundColor = "red";
+                   
+                   
+                }
+                
+            }
+            else{
+                alert("Password is can be empety ")
+                message.textcontent = " ";
+            }
+        }
+     
+    
+
+    </script>
+</body>
+</html>
